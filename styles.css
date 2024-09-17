@@ -4,11 +4,10 @@
     box-sizing: border-box;
 }
 
+/* Common Styles */
 body,
 html {
     font-family: "Poppins", sans-serif;
-    background-color: #09080c;
-    color: #f2f1f3;
     overflow-x: hidden;
     height: 100%;
     display: flex;
@@ -19,20 +18,104 @@ html {
 .container {
     text-align: center;
     padding: 15px;
-    background-color: #0d0c11;
     border-radius: 15px;
+}
+
+/* Dark Mode (Default) */
+body {
+    background-color: #09080c;
+    color: #f2f1f3;
+}
+
+.container {
+    background-color: #0d0c11;
 }
 
 h1 {
     font-family: "MarckScript", sans-serif;
-    color: #f2f1f3; 
-    font-size: 4em;
+    color: #f2f1f3;
+    font-size: 3em;
     margin-bottom: 20px;
 }
 
 p {
     font-size: 2em;
 }
+
+/* Light Mode */
+body.light-mode {
+    background-color: #f2f2f2; /* Light background color */
+    color: #000000; /* Dark text color */
+}
+
+body.light-mode .container {
+    background-color: #ffffff; /* Light background color for container */
+}
+
+body.light-mode h1 {
+    color: #000000; /* Dark text color for headings */
+}
+
+/* Base styles for smoother transitions */
+body, h1, p, .container {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Button Styles */
+.theme-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background: url('button.png') no-repeat center center;
+    background-size: contain;
+    border: none;
+    cursor: pointer;
+    transition: filter 0.3s ease;
+}
+
+/* No default inversion */
+.theme-toggle-btn.inverted {
+    filter: invert(1);
+}
+
+/* Light Mode Styles */
+body.light-mode {
+    background-color: #f2f2f2;
+    color: #000000;
+}
+
+body.light-mode .container {
+    background-color: #ffffff;
+}
+
+body.light-mode h1 {
+    color: #000000;
+}
+
+body.light-mode p {
+    color: #000000;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #09080c;
+    color: #f2f1f3;
+}
+
+body.dark-mode .container {
+    background-color: #0d0c11;
+}
+
+body.dark-mode h1 {
+    color: #f2f1f3;
+}
+
+body.dark-mode p {
+    color: #f2f1f3;
+}
+
 
 ::selection {
     background: rgba(135, 135, 135, 0.3);
