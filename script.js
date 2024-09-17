@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function getClassForWeek(weekNumber) {
-        return weekNumber % 2 === 0 ? "Англійська" : "Зарубіжна";
+        return weekNumber % 2 === 1 ? "Англійська" : "Зарубіжна";
     }
 
     function getDayMessageAndClass() {
