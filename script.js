@@ -39,4 +39,32 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.getElementById('weekday').textContent = message;
     document.getElementById('class').textContent = classForWeek;
+    
+    
+    
+    const themeToggleButton = document.getElementById("theme-toggle");
+
+    function setTheme(theme) {
+        document.body.className = theme;
+        localStorage.setItem("theme", theme);
+
+        // Apply inversion based on the theme
+        themeToggleButton.classList.toggle("inverted", theme === "dark-mode");
+    }
+
+    function getCurrentTheme() {
+        return localStorage.getItem("theme") || "dark-mode";
+    }
+
+    function toggleTheme() {
+        const currentTheme = getCurrentTheme();
+        const newTheme = currentTheme === "dark-mode" ? "light-mode" : "dark-mode";
+        setTheme(newTheme);
+    }
+
+    // Initialize theme
+    setTheme(getCurrentTheme());
+
+    themeToggleButton.addEventListener("click", toggleTheme);
 });
+
