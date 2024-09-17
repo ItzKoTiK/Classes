@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     function getCurrentWeekNumber() {
+        const options = { timeZone: 'Europe/Kiev' };
+        const currentDate = new Date().toLocaleString('en-US', options);
         const currentDate = new Date();
         const startOfYear = new Date(currentDate.getFullYear(), 0, 1);
         const daysDifference = (currentDate - startOfYear) / (1000 * 60 * 60 * 24);
